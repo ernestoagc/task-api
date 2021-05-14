@@ -12,10 +12,3 @@ Vamos a crear dos contenedores para que la aplicación se pueda ejecutar correct
 I've Built for TaskController (TaskControllerTest.java) 5 unit test with Mockito.
 
 ![](https://i.imgur.com/1fvpncy.jpg)
-
- 
-
-
-
-#### **4. demo**
-I've deploy these application on heroku. if you want to test online replace: http://localhost:8600  to **https://messageangular.herokuapp.com**

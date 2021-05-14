@@ -13,9 +13,9 @@ services:
     networks:
       - task
       
-  task-app:
+  task-api:
     restart: on-failure
-    container_name: task-app
+    container_name: task-api
     build: ./
     depends_on:
       - dbTaskTest
@@ -28,7 +28,7 @@ services:
     links:
       - dbTaskTest
     networks:
-      - task
+      - task 
 
 networks:
   task:
