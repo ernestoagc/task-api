@@ -1,0 +1,35 @@
+version: '3.5'
+services:
+
+  dbTaskTest:  
+    container_name: dbTaskTest
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: dbTask
+    ports:
+      - "3306:3306"    
+    networks:
+      - task
+      
+  task-app:
+    restart: on-failure
+    container_name: task-app
+    build: ./
+    depends_on:
+      - dbTaskTest
+    expose:
+      - "8400"
+    ports:
+      - 8400:8400
+    environment:
+      spring.profiles.active: test 
+    links:
+      - dbTaskTest
+    networks:
+      - task
+
+networks:
+  task:
+    name: task-net 
